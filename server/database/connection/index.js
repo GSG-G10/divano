@@ -8,3 +8,6 @@ const pool = new Pool({
   max: process.env.DB_MAX_CONNECTIONS || 2,
   ssl: { rejectUnauthorized: false },
 });
+
+
+module.exports = pool;
