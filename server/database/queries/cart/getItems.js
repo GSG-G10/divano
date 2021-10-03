@@ -1,3 +1,3 @@
 const connection = require('../../connection');
 
-module.exports = (productId, cartId) => connection.query('SELECT products.* FROM products INNER JOIN cart_item ON cart_item.product_id = $1 INNER JOIN cart ON cart_item.cart_id = $2 WHERE cart_item.product_id = products.id;', [productId, cartId]).then((data) => data.rows);
+module.exports = (productId, cartId) => connection.query('SELECT products.*, cart_items.quentity FROM products INNER JOIN cart_items ON cart_items.product_id=products.id INNER JOIN users ON cart_items.user_id = users.id WHERE cart_items.user_id = 3;', [productId, cartId]).then((data) => data.rows);
