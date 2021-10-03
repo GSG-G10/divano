@@ -13,14 +13,9 @@ CREATE TABLE products (
     price VARCHAR(10) NOT NULL,
     category VARCHAR(100) NOT NULL
 );
-CREATE TABLE cart (
+CREATE TABLE cart_items (
      id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
-    items_number INTEGER NOT NULL
-);
-CREATE TABLE cart_item (
-     id SERIAL PRIMARY KEY,
-    cart_id INTEGER REFERENCES cart(id),
     product_id INTEGER REFERENCES products(id),
     quentity INTEGER NOT NULL
 );
