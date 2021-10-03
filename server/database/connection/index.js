@@ -1,13 +1,24 @@
 require("env2")(".env");
 const { Pool } = require("pg");
 
-const connectionString = process.env.DB_URL;
+const { DATABASE_URL, TEST_DB_URL, DEV_DB_URL } = process.env;
 
-const pool = new Pool({
-  connectionString,
-  max: process.env.DB_MAX_CONNECTIONS || 2,
-  ssl: { rejectUnauthorized: false },
-});
+let dbUrl = "";
+if (process.env.NODE_ENV === "test") {
+  dbUrl = TEST_DB_URL;
+} else if (process.env.NODE_ENV === "development") {
+  dbUrl = DEV_DB_URL;
+} else if (process.env.NODE_ENV === "production") {
+  dbUrl = DATABASE_URL;
+} else {
+  throw new Error("error in database URL !");
+}
 
+const options = {
+  connectionString: dbUrl,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+};
 
-module.exports = pool;
+module.exports = new Pool(options);
