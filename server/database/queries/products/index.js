@@ -5,9 +5,4 @@ const getProductsQuery = () => connection.query(
 
 module.exports = {
     getProductsQuery
-}
-
-
-
-
-
+};
