@@ -4,7 +4,7 @@ const { addUserQuery } = require('../../database/queries/users');
 
 const signUp = (req, res) => {
   const { username, password, email } = req.body;
-  //hash password 
+  // hash password
   hash(password, 10, (err, hashedPassword) => {
     if (err) {
       res.status(500).json({
@@ -18,7 +18,6 @@ const signUp = (req, res) => {
         email,
         password: hashedPassword,
       })
-
         .then((data) => data.rows[0])
         .then((user) => {
           sign(
@@ -35,7 +34,9 @@ const signUp = (req, res) => {
                   status: 500,
                 });
               } else {
-                res.cookie('accessToken', token);
+                res.clearCookies('token', 'userInfo');
+                res.cookie('userInfo', { username: user.username, id: user.id });
+                res.cookie('token', token, { httpOnly: true, secure: true });
               }
             },
           );
