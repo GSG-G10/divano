@@ -10,14 +10,14 @@ const login = (req, res, next) => {
       getUserQuery(email)
         .then((row) => {
           // check if username exists
-          if (!row) {
+          if (!row.length) {
             res.status(401).json({ message: 'invalid email or password' });
           } else {
             // check password
-            bcrypt.compare(password, row.password).then((data) => {
+            bcrypt.compare(password, row[0].password).then((data) => {
               if (data) { // send cookies and response
-                res.cookie('username', row.useername);
-                createSession(email, row.id)
+                res.cookie('username', row[0].useername);
+                createSession(email, row[0].id)
                   .then((token) => {
                     res.cookie('token', token, { httpOnly: true, secure: true });
                     res.json({ message: 'logged in successfully' });
