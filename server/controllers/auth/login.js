@@ -7,7 +7,7 @@ const login = (req, res) => {
     .then((row) => {
       // check if username exists
       if (!row) {
-        res.status(401).send('invalid email or password');
+        res.status(401).json({ message: 'invalid email or password' });
       } else {
         // check password
         comparePasswords(password, row.password, (err, data) => {
@@ -15,10 +15,10 @@ const login = (req, res) => {
             res.status(500).json({ message: 'Internal Server Error' });
           } else if (data) {
             res.clearCookies('token', 'username');
-            res.cookie('username', row.username);
+            res.cookie({ username: row.username, id: row.id });
             res.cookie('token', createSession(email), { httpOnly: true, secure: true });
-            res.json({ name: row.username });
-          } else res.status(401).send('invalid email or password');
+            // this line needs to send response
+          } else res.status(401).json({ message: 'invalid email or password' });
         });
       }
     }).catch(() => {
