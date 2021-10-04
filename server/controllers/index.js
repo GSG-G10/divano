@@ -1,5 +1,9 @@
-const logout = require('./logout');
-const serverError = require('./serverError');
 const productDetails = require('./productDetails');
+const { login, logout } = require('./auth');
 
-module.exports = { logout, serverError, productDetails };
+module.exports = {
+  login,
+  logout,
+  productDetails,
+};
+
