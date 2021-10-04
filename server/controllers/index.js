@@ -1,4 +1,4 @@
 const logout = require('./logout');
-const getProduct = require('./getProducts');
+const getProducts = require('./getProducts');
 
-module.exports = { logout , getProduct };
+module.exports = { logout , getProducts };
