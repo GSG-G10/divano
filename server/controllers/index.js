@@ -1,4 +1,8 @@
-const logout = require('./logout');
+const { login, logout } = require('./auth');
 const getProducts = require('./getProducts');
 
-module.exports = { logout , getProducts };
+module.exports = {
+  login,
+  getProducts,
+  logout,
+};
