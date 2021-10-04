@@ -1,7 +1,7 @@
 const { comparePasswords, createSession } = require('./index');
 const { getUserQuery } = require('../../database/queries');
 
-const login = (req, res) => {
+const login = (req, res, next) => {
   const { password, email } = req.body;
   getUserQuery(email)
     .then((row) => {
@@ -11,19 +11,16 @@ const login = (req, res) => {
       } else {
         // check password
         comparePasswords(password, row.password, (err, data) => {
-          if (err) {
-            res.status(500).json({ message: 'Internal Server Error' });
-          } else if (data) {
+          if (err) next(err);
+          else if (data) { // send cookies and response
             res.clearCookies('token', 'userInfo');
-            res.cookie('userInfo', { username: row.username, id: row.id });
-            res.cookie('token', createSession(email), { httpOnly: true, secure: true });
-            // this line needs to send response
+            res.cookie('username', row.useername);
+            res.cookie('token', createSession(email, row.id), { httpOnly: true, secure: true });
+            res.json({ message: 'logged in successfully' });
           } else res.status(401).json({ message: 'invalid email or password' });
         });
       }
-    }).catch(() => {
-      res.status(500).json({ message: 'Internal Server Error' });
-    });
+    }).catch((err) => next(err));
 };
 
 module.exports = login;

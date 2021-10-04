@@ -1,5 +1,5 @@
 const logout = (req, res) => {
-  res.clearCookie('token', 'userInfo')
+  res.clearCookie('token', 'username')
     .json({ message: 'logged out succefully' });
 };
 
