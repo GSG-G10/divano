@@ -1,4 +1,5 @@
-const { comparePasswords, createSession } = require('./index');
+const bcrypt = require('bcryptjs');
+const { createSession } = require('./index');
 const { getUserQuery } = require('../../database/queries');
 const { loginSchema } = require('../../utils/validations');
 
@@ -13,15 +14,17 @@ const login = (req, res, next) => {
             res.status(401).json({ message: 'invalid email or password' });
           } else {
             // check password
-            comparePasswords(password, row.password, (err, data) => {
-              if (err) next(err);
-              else if (data) { // send cookies and response
-                res.clearCookies('token', 'userInfo');
+            bcrypt.compare(password, row.password).then((data) => {
+              if (data) { // send cookies and response
                 res.cookie('username', row.useername);
-                res.cookie('token', createSession(email, row.id), { httpOnly: true, secure: true });
-                res.json({ message: 'logged in successfully' });
+                createSession(email, row.id)
+                  .then((token) => {
+                    res.cookie('token', token, { httpOnly: true, secure: true });
+                    res.json({ message: 'logged in successfully' });
+                  });
               } else res.status(401).json({ message: 'invalid email or password' });
-            });
+            })
+              .catch((err) => next(err));
           }
         }).catch((err) => next(err));
     }).catch((err) => {
