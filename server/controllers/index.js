@@ -1,3 +1,4 @@
 const logout = require('./logout');
+const serverError = require('./serverError');
 
-module.exports = { logout };
+module.exports = { logout, serverError };
