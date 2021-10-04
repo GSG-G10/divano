@@ -1,3 +1,6 @@
-const logout = require('./logout');
+const { login, logout } = require('./auth');
 
-module.exports = { logout };
+module.exports = {
+  login,
+  logout,
+};
