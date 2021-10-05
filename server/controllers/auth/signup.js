@@ -1,63 +1,24 @@
 const { hash } = require('bcryptjs');
-const { sign } = require('jsonwebtoken');
-const { addUserQuery } = require('../../database/queries/users');
+const { createSession } = require('./index');
+const { addUserQuery, getUserQuery } = require('../../database/queries');
 
-const signUp = (req, res) => {
-  const { username, password, email } = req.body;
-  // hash password
-  hash(password, 10, (err, hashedPassword) => {
-    if (err) {
-      res.status(500).json({
-        msg: 'Internal Server Error',
-        status: 500,
-      });
-    } else {
-      // add user to the database
-      addUserQuery({
-        username,
-        email,
-        password: hashedPassword,
-      })
-        .then((data) => data.rows[0])
-        .then((user) => {
-          sign(
-            {
-              id: user.id,
-              username: user.username,
-              email: user.email,
-            },
-            process.env.SECRET,
-            (errr, token) => {
-              if (errr) {
-                res.status(500).json({
-                  msg: 'Internal Server Error',
-                  status: 500,
-                });
-              } else {
-                res.clearCookies('token', 'userInfo');
-                res.cookie('userInfo', { username: user.username, id: user.id });
-                res.cookie('token', token, { httpOnly: true, secure: true });
-              }
-            },
-          );
-        })
-        .catch((er) => {
-          if (er.code) {
-            if (er.code === '23505') {
-              res.status(422).json({
-                msg: `${er.constraint.split('_')[1]} alerdy in use`,
-                status: 422,
-              });
-            }
-          } else {
-            res.status(500).json({
-              msg: er,
-              status: 500,
-            });
-          }
-        });
+const signUp = async (req, res, next) => {
+  try {
+    const { username, password, email } = req.body;
+    const hashedPassword = await hash(password, 10);
+    const userData = await getUserQuery(email);
+    if (userData.length) {
+      return res.status(409).json({ message: 'email is already in use' });
     }
-  });
+    await addUserQuery(username, email, hashedPassword);
+
+    const token = await createSession(email, username);
+    res.cookie('token', token);
+    res.cookie('username', username);
+    return res.status(201).json({ message: 'Sign up successfuly' });
+  } catch (err) {
+    return next(err);
+  }
 };
 
 module.exports = {
