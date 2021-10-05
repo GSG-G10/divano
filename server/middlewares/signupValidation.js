@@ -1,6 +1,6 @@
 const signUpSchema = require('../utils/validations/signUpSchema');
 
-module.exports = (req, res, next) => {
+const signupValid = (req, res, next) => {
   const {
     username, password, confirmPassword, email,
   } = req.body;
@@ -13,11 +13,13 @@ module.exports = (req, res, next) => {
 
   if (error) {
     // validattion error
-    res.status(422).json({
-      msg: error.details[0].message,
-      status: 422,
+    res.status(400).json({
+      message: error.details[0].message,
+      status: 400,
     });
   } else {
     next();
   }
 };
+
+module.exports = signupValid;
