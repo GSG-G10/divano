@@ -1,0 +1,86 @@
+/* pop up form  */
+.add-form-container {
+    text-align: center;
+    width: 50%;
+    height: 70%;
+    background-color: #fff;
+    padding:60px 0px;
+    border-radius: 60px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: none;
+  }
+  .add-form-container.active {
+    display: inline;
+  }
+  .content-hider {
+    width: 100vw;
+    height: 100vh;
+    background-color: #060606;
+    opacity: 41%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .content-hider.active {
+    display: block;
+  }
+  .fa-times-circle {
+    float: right;
+  }
+  .form-title {
+    clear: right;
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+  .add-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    margin-left: 5%;
+  }
+  
+  .add-form input {
+    background-color: #dddddd;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 80%;
+    padding-left: 10px;
+    margin:10px auto;
+  }
+  .popup-form-container {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .btns {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .btns button {
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+  .cancel {
+    color: #000;
+    font-size: 20px;
+  }
+  .save {
+    background-color: #59bb40;
+    font-size: 20px;
+  }
