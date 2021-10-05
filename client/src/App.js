@@ -1,12 +1,11 @@
 /* eslint-disable react/react-in-jsx-scope */
 import './App.css';
+import MainHeader from './components/mainpage/MainHeader';
 
 function App() {
   return (
     <div className="App">
-      <p>
-        front
-        </p> 
+      <MainHeader />
     </div>
   );
 }
