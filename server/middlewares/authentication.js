@@ -13,7 +13,7 @@ const authentication = (req, res, next) => {
     return res.status(401).json({ message: 'Unauthorized' });
   }
 
-  jwt.verify(token, secret, (err, decoded) => {
+  return jwt.verify(token, secret, (err, decoded) => {
     if (decoded) {
       req.userObj = decoded;
       next();
