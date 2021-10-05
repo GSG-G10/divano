@@ -10,9 +10,11 @@ const signUp = async (req, res, next) => {
     if (userData.length) {
       return res.status(409).json({ message: 'email is already in use' });
     }
-    await addUserQuery(username, email, hashedPassword);
 
-    const token = await createSession(email, username);
+    const newUserData = await addUserQuery(username, email, hashedPassword);
+    const userId = newUserData[0].id;
+
+    const token = await createSession(email, userId);
     res.cookie('token', token);
     res.cookie('username', username);
     return res.status(201).json({ message: 'Sign up successfuly' });
