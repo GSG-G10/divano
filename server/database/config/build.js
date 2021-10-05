@@ -9,7 +9,6 @@ const buildDB = () => {
   return connection.query(sql);
 };
 
-
 buildDB();
 
 module.exports = buildDB;
