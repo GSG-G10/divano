@@ -1,22 +1,41 @@
-import React, { useState} from "react";
-import axios from "axios"
+import React, { useState } from "react";
+import axios from "axios";
 import Input from "./Common/Input";
 import Button from "./Common/Button";
+import { message } from "antd";
 
 const Signup = (props) => {
   const [value, setValue] = useState({});
   const { active, setActive } = props;
 
-  const handleSignUpFetch = async () => {
-    try{
-      const response = await axios.post('/api/v1/signup')
-      console.log(response);
-      return ;
-    }catch(err){
-      console.log(err);
-    }
+  const handleSignUpFetch = async (e) => {
+      e.preventDefault()
+      const {username, email, password} = value
+      if (username && email && password) {
+          if (value.password && value.password.length >= 8){
+              if (value.password === value.confirmPassword){
+                try{const response = await axios('/api/v1/signup',{
+                    method: 'POST',
+                    data: value
+                  })
+                  message.success(response.data.message)
+                  setActive('')
+                } catch (err) {
+                    message.error(err.response.data.message)
+                }
+                  
+              } else {
+                message.error('passwords are not the same')
+              }
+          } else {
+            message.error('password length must be more than 8 characters')
+          }
+      } else {
+        message.error('there should not be empty boxes')
+      }
 
   }
+
   const handleChange = () => {
     setActive("");
   };
@@ -33,8 +52,10 @@ const Signup = (props) => {
   return (
     <>
       <div className={`add-form-container ${active}`}>
-        <h2 className="form-title">Sign Up</h2>
         <div className="popup-form-container">
+        <span onClick={handleChange} class="close" title="Close Modal">&times;</span>
+        <h2 className="form-title">Sign Up</h2>
+        
           <form className="add-form">
             <Input
               type="url"
@@ -72,7 +93,7 @@ const Signup = (props) => {
           </form>
           <div className="btns">
             <Button
-              className="save"
+              className="cancel"
               textcontent="Cancel"
               type="cancel"
               onClick={handleChange}
@@ -81,12 +102,15 @@ const Signup = (props) => {
 
             <Button
               className="signup"
-              textcontent="signup"
+              textcontent="Sign Up"
               type="submit"
               onClick={handleSignUpFetch}
-              id={"cancel"}
+              id={"signup"}
             />
           </div>
+        <p className="link">
+          <u>Log In</u>
+        </p>
         </div>
       </div>
       <div className={`content-hider ${active}`}></div>

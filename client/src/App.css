@@ -2,9 +2,8 @@
 .add-form-container {
     text-align: center;
     width: 50%;
-    height: 70%;
     background-color: #fff;
-    padding:60px 0px;
+    padding:60px 0px 10px 0px;
     border-radius: 60px;
     position: fixed;
     top: 50%;
@@ -12,10 +11,12 @@
     transform: translate(-50%, -50%);
     z-index: 1;
     display: none;
+    
   }
   .add-form-container.active {
     display: inline;
   }
+
   .content-hider {
     width: 100vw;
     height: 100vh;
@@ -46,15 +47,19 @@
   }
   
   .add-form input {
-    background-color: #dddddd;
-    border-radius: 10px;
+    background-color: #fffbfb;
+    border-radius: 35px;
     border: none;
     outline: none;
-    height: 30px;
-    width: 80%;
-    padding-left: 10px;
-    margin:10px auto;
+    height: 20px;
+    width: 60%;
+    padding: 29px 30px;
+    margin:0px auto 20px auto;
+    filter: drop-shadow(0 0 0.75rem rgb(221, 218, 218));
   }
+  .add-form input::placeholder {
+    text-align: center;
+}
   .popup-form-container {
     width: 90%;
     margin: 10px auto;
@@ -63,24 +68,60 @@
     flex-direction: column;
   }
   .btns {
-    width: 90%;
+    width: 45%;
     display: flex;
-    justify-content: space-evenly;
+    margin :0px auto;
+    justify-content: space-between;
   }
   .btns button {
-    height: 30px;
-    width: 100px;
+    height: 50px;
     cursor: pointer;
     outline: none;
     border: none;
-    border-radius: 10px;
-    margin-right: 5px;
+    border-radius: 35px;
+    padding: 5px 35px;
   }
-  .cancel {
-    color: #000;
+ .cancel {
+    background-color: white;
     font-size: 20px;
+    filter: drop-shadow(0 0 0.75rem rgb(211, 211, 211));
+    color:hsl(205, 88%, 13%);
+
   }
-  .save {
-    background-color: #59bb40;
+  .signup {
+    background-color: hsl(205, 88%, 13%);
+    font-size: 19px;
+    filter: drop-shadow(0 0 0.75rem rgb(197, 196, 196));
+    color: white;
+    
+  }
+  .link{
+    color:hsl(205, 88%, 13%);
+    margin-top: 50px;
     font-size: 20px;
+    cursor: pointer;
+
   }
+  .link:hover{
+    
+    font-size: 22px;
+    transition: all 0.5s ease;
+    margin-top: 46px;
+    
+
+  }
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #d6d4d4;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: hsl(205, 88%, 13%);
+    cursor: pointer;
+  }
+  
