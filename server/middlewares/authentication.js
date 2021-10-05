@@ -1,4 +1,4 @@
-require("env2")(".env");
+require('env2')('.env');
 const jwt = require('jsonwebtoken');
 
 const authentication = (req, res, next) => {

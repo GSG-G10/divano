@@ -1,13 +1,12 @@
 const { getItems } = require('../../database/queries/cart');
 
-const getCart = (req, res) => {
-  const { userId } = req.cookies;
-  getItems(userId)
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((err) => {
-        console.log(err.message);
-        res.status(500).json({ message: 'Internal server error' });
-      });
-module.exports=getCart;
+const getCart = async (req, res, next) => {
+  try {
+    const { id } = req.userObj;
+    const items = await getItems(id);
+    res.json(items);
+  } catch (err) {
+    next(err);
+  }
+};
+module.exports = getCart;
