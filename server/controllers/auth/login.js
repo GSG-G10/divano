@@ -1,26 +1,30 @@
-const { comparePasswords, createSession } = require('./index');
+const bcrypt = require('bcryptjs');
 const { getUserQuery } = require('../../database/queries');
+const { loginSchema } = require('../../utils/validations');
 
-const login = (req, res, next) => {
-  const { password, email } = req.body;
-  getUserQuery(email)
-    .then((row) => {
-      // check if username exists
-      if (!row) {
-        res.status(401).json({ message: 'invalid email or password' });
-      } else {
-        // check password
-        comparePasswords(password, row.password, (err, data) => {
-          if (err) next(err);
-          else if (data) { // send cookies and response
-            res.clearCookies('token', 'userInfo');
-            res.cookie('username', row.useername);
-            res.cookie('token', createSession(email, row.id), { httpOnly: true, secure: true });
-            res.json({ message: 'logged in successfully' });
-          } else res.status(401).json({ message: 'invalid email or password' });
-        });
-      }
-    }).catch((err) => next(err));
+const login = async (req, res, next) => {
+  // eslint-disable-next-line global-require
+  const { createSession } = require('./index'); // there is a problem with requiring this function
+  try {
+    const { password, email } = req.body;
+    await loginSchema.validateAsync(req.body).catch((err) => {
+      res.status(422).json({ message: err.message });
+    });
+    const { rows } = await getUserQuery(email);
+    if (!rows.length) {
+      return res.status(401).json({ message: 'invalid email or password' });
+    }
+    const compared = await bcrypt.compare(password, rows[0].password);
+    if (!compared) {
+      return res.status(401).json({ message: 'invalid email or password' });
+    }
+    const token = await createSession(email, rows[0].id);
+    res.cookie('token', token);
+    res.cookie('username', rows[0].username);
+    return res.json({ message: 'logged in successfully' });
+  } catch (err) {
+    return next(err);
+  }
 };
 
 module.exports = login;

@@ -1,8 +1,12 @@
-const {getProductsQuery} = require('../database/queries/products');
+const { getProductsQuery } = require('../database/queries/products');
 
-module.exports = (req, res, next) => {
-  
-  getProductsQuery()
-      .then((data) => res.json(data.rows))
-      .catch((err) => next(err));
+const getProducts = async (req, res, next) => {
+  try {
+    const { rows: products } = await getProductsQuery();
+    res.status(200).json({ products });
+  } catch (err) {
+    next(err);
+  }
 };
+
+module.exports = getProducts;

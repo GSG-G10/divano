@@ -1,4 +1,4 @@
-require("env2")(".env");
+require('env2')('.env');
 const jwt = require('jsonwebtoken');
 
 const authentication = (req, res, next) => {
@@ -13,7 +13,7 @@ const authentication = (req, res, next) => {
     return res.status(401).json({ message: 'Unauthorized' });
   }
 
-  jwt.verify(token, secret, (err, decoded) => {
+  return jwt.verify(token, secret, (err, decoded) => {
     if (decoded) {
       req.userObj = decoded;
       next();

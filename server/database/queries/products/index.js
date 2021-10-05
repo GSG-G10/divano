@@ -3,7 +3,7 @@ const getProductDetailsQuery = require('./getProductDetails');
 
 const getProductsQuery = () => connection.query(
 
-  'SELECT * FROM products ;');
+  'SELECT * FROM products;');
 
 module.exports = {
   getProductsQuery, getProductDetailsQuery,
