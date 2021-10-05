@@ -5,6 +5,4 @@ const addUserQuery = (username, email, password) => connection.query(
   [username, email, password],
 );
 
-module.exports = {
-  addUserQuery,
-};
+module.exports = addUserQuery;
