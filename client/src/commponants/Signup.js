@@ -89,7 +89,7 @@ const Signup = (props) => {
               placeholder="confirm password"
               onChange={handelInputChange}
               required
-              
+            
             />
           </form>
           <div className="btns">
