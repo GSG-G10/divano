@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 function MainHeader({username}) {
   return (
     <>
-      <NavBar />
+      <NavBar username = {username}/>
       <Box className="banner">
         <Box className="welcome">
           Furniture that <br /> Everyone <br /> loves
