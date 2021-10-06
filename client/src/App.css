@@ -1,0 +1,158 @@
+/* pop up form  */
+.add-form-container {
+  text-align: center;
+  width: 50%;
+  background-color: #fff;
+  padding: 60px 0px 10px 0px;
+  border-radius: 60px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+}
+.add-form-container.active {
+  display: inline;
+}
+
+.content-hider {
+  width: 100vw;
+  height: 100vh;
+  background-color: #060606;
+  opacity: 41%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content-hider.active {
+  display: block;
+}
+.fa-times-circle {
+  float: right;
+}
+.form-title {
+  clear: right;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.add-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-left: 5%;
+}
+
+.add-form input {
+  background-color: #fffbfb;
+  border-radius: 35px;
+  border: none;
+  outline: none;
+  height: 20px;
+  width: 60%;
+  padding: 29px 30px;
+  margin: 0px auto 20px auto;
+  filter: drop-shadow(0 0 0.75rem rgb(221, 218, 218));
+}
+.add-form input::placeholder {
+  text-align: center;
+}
+.popup-form-container {
+  width: 90%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.btns {
+  width: 45%;
+  display: flex;
+  margin: 0px auto;
+  justify-content: space-between;
+}
+.btns button {
+  height: 50px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 35px;
+  padding: 5px 35px;
+}
+.cancel {
+  background-color: white;
+  font-size: 20px;
+  filter: drop-shadow(0 0 0.75rem rgb(211, 211, 211));
+  color: hsl(205, 88%, 13%);
+}
+.signup {
+  background-color: hsl(205, 88%, 13%);
+  font-size: 19px;
+  filter: drop-shadow(0 0 0.75rem rgb(197, 196, 196));
+  color: white;
+}
+.link {
+  color: hsl(205, 88%, 13%);
+  margin-top: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.link:hover {
+  font-size: 22px;
+  transition: all 0.5s ease;
+  margin-top: 46px;
+}
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #d6d4d4;
+}
+
+.close:hover,
+.close:focus {
+  color: hsl(205, 88%, 13%);
+  cursor: pointer;
+}
+/* error css  */
+div .error {
+  
+  background-image: url("./img/leaf.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+ 
+}
+.pageerror {
+  font-size: 90px;
+  font-family: sans-serif;
+  margin: 0px 0px;
+}
+.textpageerror {
+  font-size: 45px;
+  font-family: sans-serif;
+}
+.error img {
+  width: 27%;
+}
+.goback {
+  color: hsl(205, 88%, 13%);
+  font-size: 40px;
+  padding: 35px 40px;
+  cursor: pointer;
+}
+.goback:hover {
+  color: hsl(205, 88%, 13%);
+  font-size: 43px;
+  transition: all 0.1s ease-in-out;
+}
