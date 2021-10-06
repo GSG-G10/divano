@@ -1,6 +1,6 @@
 
 import React from "react";
-import sofa from "../img/4043.png";
+import sofa from "../../assets/errors/4043.png";
 
 const PageNotFound = () => {
   return (
