@@ -1,5 +1,5 @@
 import "./Style.css";
-import { AppBar, Toolbar } from "@mui/material";
+import { AppBar, IconButton, Toolbar } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -18,10 +18,10 @@ const theme = createTheme({
   },
 });
 
-function NavBar({username}) {
+function NavBar({username, cartCount, navBackground}) {
   return (
       <ThemeProvider theme={theme}>
-        <AppBar color="transparent">
+        <AppBar color={navBackground} position="absolute">
           <Toolbar>
             <Link to="/" className="logo">
               Divano
@@ -33,7 +33,7 @@ function NavBar({username}) {
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="listItem">
+                <Link to="/funiture" className="listItem">
                   Furniture
                 </Link>
               </li>
@@ -49,14 +49,16 @@ function NavBar({username}) {
               </li>
             </ul>
             <Toolbar className="navBtns">
-              <button className="loginBtn">Log In</button>
-              <div className="userContainer hidden">
+              <button className={username?"hidden":"loginBtn"}>Log In</button>
+              <div className={username?"userContainer":"hidden"}>
                 <AccountCircleIcon color="secondary"/>
                 <span className="userName">{username}</span>
               </div> 
               <div className="cartContainer">
-                <ShoppingCartIcon className="cartIcon" />
-                <span className="counter">0</span>
+                <IconButton>
+                  <ShoppingCartIcon className="cartIcon" />
+                </IconButton>
+                <span className="counter">{cartCount?cartCount:0}</span>
               </div>
             </Toolbar>
           </Toolbar>
