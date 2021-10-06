@@ -13,9 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/api/v1', router);
 
-app.get('*', (req, res) => {
-  app.use(express.static(join(__dirname, '..', 'client', 'build')));
-  res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    app.use(express.static(join(__dirname, '..', 'client', 'build')));
+    res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
+  });
+}
 
 module.exports = app;
