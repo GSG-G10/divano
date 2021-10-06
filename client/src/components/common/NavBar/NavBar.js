@@ -1,26 +1,11 @@
 import "./Style.css";
 import { AppBar, IconButton, Toolbar } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      //darkBlue
-      main: "#04263F",
-    },
-    secondary: {
-      //Brown
-      main: "#99580B",
-    },
-  },
-});
-
 function NavBar({username, cartCount, navBackground}) {
   return (
-      <ThemeProvider theme={theme}>
         <AppBar color={navBackground} position="absolute">
           <Toolbar>
             <Link to="/" className="logo">
@@ -63,7 +48,6 @@ function NavBar({username, cartCount, navBackground}) {
             </Toolbar>
           </Toolbar>
         </AppBar>
-      </ThemeProvider>
   );
 }
 
