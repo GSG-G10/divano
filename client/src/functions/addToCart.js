@@ -1,19 +1,20 @@
 import { message } from "antd";
-import {useCart} from "react-use-cart";
+// import {useCart} from "react-use-cart";
+import axios from "axios";
+
 
 const addToCart = async (item) => {
-    const {addItem} =useCart();
-   addItem(item)
   try {
-      const addTocart = await axios('api/v1/addtocart'{
+     await axios('api/v1/addtocart',{
           method:"POST",
           data:
              item.id,
-      })message.response()
+      })
+      return message.success("Add To Cart successfuly")
   }catch(err) {
-    message.error(err)
+    return message.error(err)
   }
 
 }
 
-export default addToCart
+export default addToCart;
