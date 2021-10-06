@@ -1,10 +1,9 @@
 import "./Style.css";
 import { Box } from "@mui/material";
-import NavBar from './NavBar'
-function MainHeader({username}) {
+function MainHeader({username, setNavBackground}) {
+  setNavBackground('transparent')
   return (
     <>
-      <NavBar username = {username}/>
       <Box className="banner">
         <Box className="welcome">
           Furniture that <br /> Everyone <br /> loves
