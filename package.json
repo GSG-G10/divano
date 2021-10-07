@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/GSG-G10/divano-back/issues"
   },
-  "homepage": "https://github.com/GSG-G10/divano-back#readme",
+  "homepage": "https://divano.herokuapp.com/",
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
