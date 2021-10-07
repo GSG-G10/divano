@@ -9,8 +9,7 @@ const signUp = async (req, res, next) => {
     const hashedPassword = await hash(password, 10);
     const userData = await getUserQuery(email, username);
     if (userData.rows.length) {
-      // eslint-disable-next-line no-throw-literal
-      throw { status: 409, message: 'email or username is already in use' };
+      return res.status(409).json({ message: 'email or username is already in use' });
     }
 
     const newUserData = await addUserQuery(username, email, hashedPassword);
@@ -20,7 +19,6 @@ const signUp = async (req, res, next) => {
     res.cookie('username', username);
     return res.status(201).json({ message: 'Signed up successfuly' });
   } catch (err) {
-    console.log('catch', err);
     return next(err);
   }
 };
