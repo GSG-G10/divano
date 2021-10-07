@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const {
-  logout, getCart, login, productDetails, error404, serverError, signUp, getProducts,
+  logout,
+  getCart,
+  login,
+  productDetails,
+  error404,
+  serverError,
+  signUp,
+  getProducts,
+  updateCartProduct,
+  deleteCartProduct,
 } = require('../controllers');
 const { authentication, signUpValidation } = require('../middlewares');
 
@@ -10,6 +19,8 @@ router.get('/product/:id', productDetails);
 router.get('/products', getProducts);
 router.get('/logout', logout);
 router.get('/cart', authentication, getCart);
+router.put('/cart/products/:id', authentication, updateCartProduct);
+router.delete('/cart/products/:id', authentication, deleteCartProduct);
 router.post('/cart', authentication, getCart);
 router.use(error404);
 router.use(serverError);
