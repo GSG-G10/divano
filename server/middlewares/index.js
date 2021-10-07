@@ -1,4 +1,4 @@
 const authentication = require('./authentication');
-const signupValid = require('./signupValidation');
+const signUpValidation = require('./signupValidation');
 
-module.exports = { authentication, signupValid };
+module.exports = { authentication, signUpValidation };

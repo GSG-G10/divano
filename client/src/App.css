@@ -1,0 +1,179 @@
+/* pop up form  */
+.add-form-container {
+  text-align: center;
+  width: 50%;
+  background-color: #fff;
+  padding: 60px 0px 10px 0px;
+  border-radius: 60px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+}
+.add-form-container.active {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.content-hider {
+  width: 100vw;
+  height: 100vh;
+  background-color: #060606;
+  opacity: 41%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content-hider.active {
+  display: block;
+}
+.fa-times-circle {
+  float: right;
+}
+.form-title {
+  clear: right;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+.add-form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.btns {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  align-self: center;
+  padding-bottom: 20px;
+}
+.link {
+  color: hsl(205, 88%, 13%);
+  font-size: 16px;
+  cursor: pointer;
+  padding-top: 10px;
+}
+.link:hover {
+  font-size: 18px;
+  padding-top: 2;
+  transition: all 0.5s ease;
+}
+.popup-form-container {
+  width: 80%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #d6d4d4;
+}
+>>>>>>> b8799e0f14bb6422db727f799e3551f9cd4d67f0
+.close:hover,
+.close:focus {
+  color: hsl(205, 88%, 13%);
+  cursor: pointer;
+}
+
+<<<<<<< HEAD
+/* Footer */
+.footer-com {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #04263f;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+=======
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #d6d4d4;
+  }
+=======
+.footer{
+  height: 290px;
+  display: flex;
+  flex-direction:column;
+  background-color:#04263F ;
+  justify-content: center;
+  align-items: center;
+  color :white;
+  position:absolute;
+  bottom:0;
+  width: 100%;
+}
+.footer-com{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+/* error css  */
+div .error {
+>>>>>>> b8799e0f14bb6422db727f799e3551f9cd4d67f0
+  
+  background-image: url("./assets/errors/leaf.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+ 
+}
+.pageerror {
+  font-size: 90px;
+  font-family: sans-serif;
+  margin: 0px 0px;
+}
+.textpageerror {
+  font-size: 45px;
+  font-family: sans-serif;
+}
+.error img {
+  width: 27%;
+}
+.goback {
+  color: hsl(205, 88%, 13%);
+  font-size: 40px;
+  padding: 35px 40px;
+  cursor: pointer;
+}
+.goback:hover {
+  color: hsl(205, 88%, 13%);
+  font-size: 43px;
+  transition: all 0.1s ease-in-out;
+}
+  
+>>>>>>> 9ad20c8f0c97253673b6be591fe3db5cb090575e
