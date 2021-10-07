@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./App.css";
 import NavBar from "./components/common/NavBar/NavBar";
 import MainHeader from "./components/mainpage/MainHeader";
+import ProductDetails from "./components/ProductDetails";
 
 const theme = createTheme({
   palette: {
@@ -20,23 +21,23 @@ const theme = createTheme({
 });
 
 function App() {
-  const [navBackground, setNavBackground] = useState("transparent");
-  const [username, setUsername] = useState("");
-  const [cartCount, setCartCount] = useState(0);
+  // const [navBackground, setNavBackground] = useState("transparent");
+  // const [username, setUsername] = useState("");
+  // const [cartCount, setCartCount] = useState(0);
   return (
     <div className="App">
       <Router>
         <ThemeProvider theme={theme}>
-          <NavBar
-            username={username}
-            cartCount={cartCount}
+          {/* <NavBar
+            username={'username'}
+            cartCount={'cartCount'}
             navBackground={navBackground}
-          />
+          /> */}
           <Switch>
             <Route exact path="/">
-              <MainHeader setNavBackground={setNavBackground} />
+              <MainHeader  />
             </Route>
-            <Route exact path="/funiture"></Route>
+            <Route exact path="/funiture"><ProductDetails/></Route>
           </Switch>
         </ThemeProvider>
       </Router>
