@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
 
 /*nav Bar*/
-.navBar{
+.navBar {
   background: none;
   display: flex;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
-.logo{
-  font-family: 'Megrim', cursive;
+.logo {
+  font-family: "Megrim", cursive;
   color: white;
   font-size: 36px;
   font-weight: 900;
@@ -16,55 +15,55 @@
   text-decoration: none;
   width: 25%;
 }
-.navList{
+.navList {
   display: flex;
-  width:40%;
+  width: 40%;
   justify-content: space-around;
   list-style-type: none;
-  
 }
-.listItem{
+.listItem {
   text-decoration: none;
   color: white;
 }
 /*nav buttons*/
-.navBtns{
+.navBtns {
   display: flex;
   width: 13%;
   justify-content: space-around;
   align-content: center;
 }
-.loginBtn{
-  background-color:#99580B;
-  border: solid #99580B;
+.loginBtn {
+  background-color: #99580b;
+  border: solid #99580b;
   border-radius: 20px;
   padding: 0 1rem;
   color: white;
   font-size: medium;
   height: 37px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.cartIcon{
-  color:white;
+.cartIcon {
+  color: white;
 }
-.counter{
-  background-color:#99580B;
+.counter {
+  background-color: #99580b;
   color: white;
   border-radius: 50%;
-  padding: .2rem .5rem;
+  padding: 0.2rem 0.5rem;
 }
 
-.userContainer{
+.userContainer {
   display: flex;
   cursor: pointer;
 }
-.userName{
+.userName {
   color: white;
 }
 
 /*nav actions*/
-.hidden{
+.hidden {
   display: none;
 }
 .active {

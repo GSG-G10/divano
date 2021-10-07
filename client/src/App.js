@@ -4,13 +4,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/common/NavBar/NavBar";
 import MainHeader from "./components/mainpage/MainHeader";
 import ProductDetails from "./components/ProductDetails";
-import PageNotFound from "./commponants/errors/PageNotFound";
-import Servererror from "./commponants/errors/Servererror";
+import PageNotFound from "./components/errors/PageNotFound";
+import Servererror from "./components/errors/Servererror";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Login from "./components/Login";
-import Signup from './components/Signup';
-import Cart from './pages/cart/cart';
+import Signup from "./components/Signup";
+import Cart from "./pages/cart/cart";
 import "antd/dist/antd.css";
+import  Footer  from './components/common/Footer';
 import "./App.css";
 import Furniture from './pages/Furniture.js'
 const theme = createTheme({
@@ -45,10 +46,10 @@ function App() {
           <Login active={active} setActive={setActive} />
           <Switch>
             <Route exact path="/">
-            <Login active={active} setActive={setActive} />
+              <Login active={active} setActive={setActive} />
             </Route>
-            <Route exact path="/signup"> 
-            <Signup active={active} setActive={setActive}/>
+            <Route exact path="/signup">
+              <Signup active={active} setActive={setActive} />
             </Route>
             <Route exact path="/signup"></Route>
           </Switch>
@@ -57,6 +58,10 @@ function App() {
               <MainHeader setNavBackground={setNavBackground} />
             </Route>
             <Route exact path="/funiture"><Furniture setNavBackground={setNavBackground}/></Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+
             <Route path="/500">
               <Servererror />
             </Route>
@@ -65,6 +70,7 @@ function App() {
             </Route>
           </Switch>
         </ThemeProvider>
+        <Footer />
       </Router>
     </div>
   );

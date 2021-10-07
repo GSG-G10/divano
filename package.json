@@ -1,5 +1,5 @@
 {
-  "name": "divano-back",
+  "name": "divano",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GSG-G10/divano-back.git"
+    "url": "git+https://github.com/GSG-G10/divano.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GSG-G10/divano-back/issues"
+    "url": "https://github.com/GSG-G10/divano/issues"
   },
-  "homepage": "https://github.com/GSG-G10/divano-back#readme",
+  "homepage": "https://github.com/GSG-G10/divano#readme",
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
