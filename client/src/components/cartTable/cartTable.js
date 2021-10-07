@@ -34,10 +34,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-
 function CustomizedTables({ cartProducts = [], deleteProduct, updateProduct }) {
- 
-
   return (
     <TableContainer component={Paper}>
       <Table
@@ -63,7 +60,6 @@ function CustomizedTables({ cartProducts = [], deleteProduct, updateProduct }) {
         <TableBody>
           {cartProducts.map((row) => (
             <StyledTableRow key={row.id}>
-              {row.id}
               <StyledTableCell component="th" scope="row">
                 <CartCard name={row.name} img={row.image} />
               </StyledTableCell>
