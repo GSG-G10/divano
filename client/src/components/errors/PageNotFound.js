@@ -1,6 +1,7 @@
 
 import React from "react";
 import sofa from "../../assets/errors/4043.png";
+import {Link } from 'react-router-dom'
 
 const PageNotFound = () => {
   return (
@@ -8,9 +9,9 @@ const PageNotFound = () => {
       <spen className="pageerror">404</spen>
       <spen className="textpageerror">Page Not Found</spen>
       <img src={sofa} alt="sofa img" />
-      <p className="goback">
+      <Link to='/' className="goback">
         <strong>&#10232;</strong> GO BACK
-      </p>
+      </Link>
     </div>
   );
 };

@@ -11,6 +11,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Cart from "./pages/cart/cart";
 import "antd/dist/antd.css";
+import  Footer  from './components/common/Footer';
 import "./App.css";
 
 const theme = createTheme({
@@ -68,6 +69,7 @@ function App() {
             </Route>
           </Switch>
         </ThemeProvider>
+        <Footer />
       </Router>
     </div>
   );
