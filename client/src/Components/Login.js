@@ -1,11 +1,14 @@
 import React, { useState} from "react";
 import axios from "axios"
-import Input from "./Common/Input";
-import Button from "./Common/Button";
+import {Link} from 'react-router-dom';
 import { message } from "antd";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
+
 
 const Login = (props) => {
-    const [value, setValue] = useState({});
+    const [value, setValue] = useState({email: '', password: ''});
     const { active, setActive } = props;
   
     const handleSignUpFetch = async (e) => {
@@ -21,9 +24,9 @@ const Login = (props) => {
                         message.success(response.data.message)
                         return setActive('')
                     }
-                    message.error(response.data.message)
+                   return message.error(response.data.message)
                   } catch (err) {
-                      message.error(err.response.data.message)
+                    return  message.error(err.response.data.message)
                   }
                     
             } else {
@@ -41,53 +44,46 @@ const Login = (props) => {
     const handelInputChange = (e) => {
       const newValue = e.target.value;
       const inputName = e.target.name;
-      console.log(e.target.name);
       setValue((prevState) => {
         return { ...prevState, [inputName]: newValue };
       });
-      console.log(value);
     };
     return (
         <>
           <div className={`add-form-container ${active}`}>
+          <span onClick={handleChange} class="close" title="Close Modal">&times;</span>
             <h2 className="form-title">Login</h2>
             <div className="popup-form-container">
               <form className="add-form">
-                <Input
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="email"
-                  onChange={handelInputChange}
-                  required
-                />
-    
-                <Input
-                  type="url"
-                  name="password"
-                  id="password"
-                  placeholder="password"
-                  onChange={handelInputChange}
-                  required
-                />
+                <TextField
+          required
+         margin='normal'
+         className='outlined-password-input'
+          id="outlined-required"
+          label="email"
+          name='email'
+          type='email'
+          onChange={handelInputChange}
+        />
+
+        <TextField
+         required
+         margin='normal'
+         className='outlined-password-input'
+          id="outlined-password-input"
+          label="Password"
+          type="password"
+          name='password'
+          onChange={handelInputChange}
+        />
               </form>
               <div className="btns">
-                <Button
-                  className="save"
-                  textcontent="Cancel"
-                  type="cancel"
-                  onClick={handleChange}
-                  id={"cancel"}
-                />
-    
-                <Button
-                  className="login"
-                  textcontent="Login"
-                  type="submit"
-                  onClick={handleSignUpFetch}
-                  id={"login"}
-                />
+              <Button variant="outlined" onClick={handleChange} >Cancel</Button>
+              <Button variant="contained" onClick={handleSignUpFetch} color='primary'>Login</Button>
               </div>
+              <Link to='/signup' className="link" >
+          <u>Sign Up</u>
+        </Link>
             </div>
           </div>
           <div className={`content-hider ${active}`}></div>
