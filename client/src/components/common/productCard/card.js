@@ -24,7 +24,7 @@ const theme = createTheme({
 });
 
 
-function ProductsCard({ id, name, price }) {
+function ProductsCard({ id, name, price, image }) {
 
     
         const addToCart = ({id })=> axios.post('/user', {
@@ -39,16 +39,16 @@ function ProductsCard({ id, name, price }) {
          
     return (
         <ThemeProvider theme={theme}>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 350 }}>
                 <CardActionArea>
                     <CardMedia
                         component="img"
                         height="200"
-                        image="https://cdn-images.article.com/products/SKU330F/2890x1500/image50523.jpg"
-                        alt="green iguana"
+                        image={image}
+                        alt="furniture"
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" align="center">
+                        <Typography gutterBottom variant="h6" component="div" align="center">
                             {name} name
                         </Typography>
                     </CardContent>
@@ -59,7 +59,7 @@ function ProductsCard({ id, name, price }) {
                     justifyContent: 'space-evenly',
                     alignItems: 'center'
                 }}>
-                    <Typography variant="body2" color="secondary">
+                    <Typography variant="body2" color="secondary" sx={{ fontWeight: '700' }}>
                         {price} price
                     </Typography>
                     <CardActions>

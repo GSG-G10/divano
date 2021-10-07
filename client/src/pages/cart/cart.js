@@ -17,7 +17,7 @@ function Cart() {
   const [cart, setCart] = useState();
   useEffect(() => {
     axios
-      .get('/userProducts')
+      .get('api/v1/userProducts')
       .then(response => response.data)
       .then(data => setCart(data))
       .catch(err => console.log(err));
