@@ -37,14 +37,17 @@ As a User I can:
 In our journey to divano store, we will start with the home page, that contains in the top page a nave bar with the logo, home, furniture, about us, contact us and a button to log in .you will also find some product we display in our page and a "who we are" division to know who we are. and a footer with our contacts and it will be displayed in every page.
 
 
-![image alt](https://i.imgur.com/twECi3y.jpg "title" =200x)  ![]( https://i.imgur.com/3qxLx3m.jpg "title" =300x) ![](https://i.imgur.com/eknUSi1.jpg "title" =200x)
+![image alt](https://i.imgur.com/twECi3y.jpg "title" =200x) 
+ ![]( https://i.imgur.com/3qxLx3m.jpg "title" =300x)
+  ![](https://i.imgur.com/eknUSi1.jpg "title" =200x)
 
 
 
 
 We will start with the log-in button. when we click on it, it will display a form with an email, password input, and two-button to cancel or log in. at the end of the form, you will find a signup link in case you don't have an account you can click on it. after you click on it you will find four inputs the user name, email, password, confirm password, two-button the cancel and the signup button, and a link at the end of the form in case you remember you have an account to go to the login form and log in. when you click on sign up you will log in immediately and you will have an account so congratulation.
 
-![](https://i.imgur.com/y23lM6m.jpg "title" =350x) ![](https://i.imgur.com/jJaA0sK.jpg "title" =310x)
+![](https://i.imgur.com/y23lM6m.jpg "title" =350x)
+ ![](https://i.imgur.com/jJaA0sK.jpg "title" =310x)
 
 
 After you log in you will find the home page with a cart in the navbar to see your purchases.
