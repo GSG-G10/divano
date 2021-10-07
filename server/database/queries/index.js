@@ -4,6 +4,7 @@ const {
   addToCart,
   deleteFromCart,
   updateQuantity,
+  getsingleItem,
 } = require('./cart');
 
 module.exports = {
@@ -11,6 +12,7 @@ module.exports = {
   addUserQuery,
   getCartItems,
   addToCart,
+  getsingleItem,
   deleteFromCart,
   updateQuantity,
 };

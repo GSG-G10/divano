@@ -16,9 +16,7 @@ const Login = (props) => {
         const {email, password} = value
         if (email && password) {
             if (value.password && value.password.length >= 8){
-                  try{const response = await axios.post('/api/v1/login',{
-                      data: value
-                    })
+                  try{const response = await axios.post('/api/v1/login',value)
                     if(response.data.message === 'logged in successfully'){
                         message.success(response.data.message)
                         return setActive('')
