@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Input from "./Common/Input";
-import Button from "./Common/Button";
+// import Button from "./Common/Button";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { message } from "antd";
 
 const Signup = (props) => {
   const [value, setValue] = useState({});
   const { active, setActive } = props;
+
 
   const handleSignUpFetch = async (e) => {
       e.preventDefault()
@@ -57,57 +60,53 @@ const Signup = (props) => {
         <h2 className="form-title">Sign Up</h2>
         
           <form className="add-form">
-            <Input
-              type="url"
-              name="username"
-              id="username"
-              placeholder="username"
-              onChange={handelInputChange}
-              required
-            />
-            <Input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="email"
-              onChange={handelInputChange}
-              required
-            />
-
-            <Input
-              type="url"
-              name="password"
-              id="password"
-              placeholder="password"
-              onChange={handelInputChange}
-              required
-            />
-            <Input
-              type="url"
-              name="confirmPassword"
-              id="confirm-password"
-              placeholder="confirm password"
-              onChange={handelInputChange}
-              required
-            
-            />
+          <TextField
+          required
+         margin='normal'
+         className='outlined-password-input'
+          id="outlined-required"
+          label="name"
+          name='name'
+          type='name'
+          onChange={handelInputChange}
+        />
+          <TextField
+          required
+         margin='normal'
+         className='outlined-password-input'
+          id="outlined-required"
+          label="email"
+          name='email'
+          type='email'
+          onChange={handelInputChange}
+        />
+          <TextField
+          required
+         margin='normal'
+         className='outlined-password-input'
+          id="outlined-required"
+          label="password"
+          name='password'
+          type='password'
+          onChange={handelInputChange}
+        />
+          <TextField
+          required
+         margin='normal'
+         className='outlined-password-input'
+          id="outlined-required"
+          label="confirm password"
+          name='confirmPassword'
+          type='password'
+          onChange={handelInputChange}
+        />
+           
           </form>
           <div className="btns">
-            <Button
-              className="cancel"
-              textcontent="Cancel"
-              type="cancel"
-              onClick={handleChange}
-              id={"cancel"}
-            />
+            <Button variant="outlined" onClick={handleChange} >Cancel</Button>
+            <Button variant="contained" onClick={handleSignUpFetch} color='primary'>Sign Up</Button>
 
-            <Button
-              className="signup"
-              textcontent="Sign Up"
-              type="submit"
-              onClick={handleSignUpFetch}
-              id={"signup"}
-            />
+           
           </div>
         <p className="link">
           <u>Log In</u>
