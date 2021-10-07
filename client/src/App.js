@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./App.css";
 import NavBar from "./components/common/NavBar/NavBar";
 import MainHeader from "./components/mainpage/MainHeader";
+import Cart from './pages/cart/cart';
 
 const theme = createTheme({
   palette: {
@@ -37,6 +38,9 @@ function App() {
               <MainHeader setNavBackground={setNavBackground} />
             </Route>
             <Route exact path="/funiture"></Route>
+            <Route exact path="/cart">
+            <Cart/>
+            </Route>
           </Switch>
         </ThemeProvider>
       </Router>
