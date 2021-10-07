@@ -74,9 +74,6 @@
   flex-direction: column;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 .close {
   position: absolute;
   right: 35px;
@@ -85,29 +82,13 @@
   font-weight: bold;
   color: #d6d4d4;
 }
->>>>>>> b8799e0f14bb6422db727f799e3551f9cd4d67f0
+
 .close:hover,
 .close:focus {
   color: hsl(205, 88%, 13%);
   cursor: pointer;
 }
 
-<<<<<<< HEAD
-/* Footer */
-.footer-com {
-  height: 20vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #04263f;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-=======
   .close {
     position: absolute;
     right: 35px;
@@ -116,7 +97,6 @@
     font-weight: bold;
     color: #d6d4d4;
   }
-=======
 .footer{
   height: 290px;
   display: flex;
@@ -137,7 +117,6 @@
 }
 /* error css  */
 div .error {
->>>>>>> b8799e0f14bb6422db727f799e3551f9cd4d67f0
   
   background-image: url("./assets/errors/leaf.jpg") ;
   background-size: cover;
@@ -176,4 +155,4 @@ div .error {
   transition: all 0.1s ease-in-out;
 }
   
->>>>>>> 9ad20c8f0c97253673b6be591fe3db5cb090575e
+
