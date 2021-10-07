@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Megrim&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
 
 /*nav Bar*/
 .navBar {
@@ -7,7 +7,7 @@
   padding: 0.5rem 0;
 }
 .logo {
-  font-family: "Megrim", cursive;
+  font-family: 'Megrim', cursive;
   color: white;
   font-size: 36px;
   font-weight: 900;
@@ -32,7 +32,6 @@
   justify-content: space-around;
   align-content: center;
 }
-<<<<<<< HEAD
 .navBtns p {
   color: #fff;
   font-size: 12px;
@@ -42,8 +41,6 @@
 .logout-btn {
   display: flex;
 }
-=======
->>>>>>> dba5f3ab28ea29029024db513c19b330a780784b
 .loginBtn {
   background-color: #99580b;
   border: solid #99580b;

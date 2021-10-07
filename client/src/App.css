@@ -72,10 +72,6 @@
   align-items: center;
   flex-direction: column;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> dba5f3ab28ea29029024db513c19b330a780784b
 .close {
   position: absolute;
   right: 35px;
@@ -91,7 +87,6 @@
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 /* Footer */
 .footer-com {
   height: 20vh;
@@ -108,39 +103,7 @@
 }
 /* error css  */
 div .error {
-  background-image: url("./assets/errors/leaf.jpg");
-=======
-  .close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #d6d4d4;
-  }
-.footer{
-  height: 290px;
-  display: flex;
-  flex-direction:column;
-  background-color:#04263F ;
-  justify-content: center;
-  align-items: center;
-  color :white;
-  position:absolute;
-  bottom:0;
-  width: 100%;
-}
-.footer-com{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-/* error css  */
-div .error {
-  
-  background-image: url("./assets/errors/leaf.jpg") ;
->>>>>>> dba5f3ab28ea29029024db513c19b330a780784b
+  background-image: url('./assets/errors/leaf.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -172,8 +135,3 @@ div .error {
   font-size: 43px;
   transition: all 0.1s ease-in-out;
 }
-<<<<<<< HEAD
-=======
-  
-
->>>>>>> dba5f3ab28ea29029024db513c19b330a780784b

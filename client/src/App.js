@@ -46,17 +46,8 @@ function App() {
           />
           <Switch>
             <Route exact path="/">
-<<<<<<< HEAD
               {form === 'login' ? <Login active={active} setActive={setActive}  setForm={setForm} /> : <Signup active={active} setActive={setActive}  setForm={setForm}/>}
             </Route>
-=======
-              <Login active={active} setActive={setActive} />
-            </Route>
-            <Route exact path="/signup">
-              <Signup active={active} setActive={setActive} />
-            </Route>
-            <Route exact path="/signup"></Route>
->>>>>>> dba5f3ab28ea29029024db513c19b330a780784b
           </Switch>
           <Switch>
             <Route exact path="/">
