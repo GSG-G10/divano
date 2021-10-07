@@ -2,7 +2,7 @@ require('env2')('.env');
 const jwt = require('jsonwebtoken');
 
 const authentication = (req, res, next) => {
-  const { authorization: token } = req.cookies;
+  const { token } = req.cookies;
   const secret = process.env.SECRET;
 
   if (!secret) {

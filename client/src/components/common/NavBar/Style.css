@@ -32,6 +32,7 @@
   justify-content: space-around;
   align-content: center;
 }
+<<<<<<< HEAD
 .navBtns p {
   color: #fff;
   font-size: 12px;
@@ -41,6 +42,8 @@
 .logout-btn {
   display: flex;
 }
+=======
+>>>>>>> dba5f3ab28ea29029024db513c19b330a780784b
 .loginBtn {
   background-color: #99580b;
   border: solid #99580b;
@@ -50,6 +53,7 @@
   font-size: medium;
   height: 37px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .cartIcon {

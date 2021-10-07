@@ -8,8 +8,8 @@ import PageNotFound from "./components/errors/PageNotFound";
 import Servererror from "./components/errors/Servererror";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Login from "./components/Login";
-import Signup from './components/Signup';
-import Cart from './pages/cart/cart';
+import Signup from "./components/Signup";
+import Cart from "./pages/cart/cart";
 import "antd/dist/antd.css";
 import  Footer  from './components/common/Footer';
 import "./App.css";
@@ -46,14 +46,26 @@ function App() {
           />
           <Switch>
             <Route exact path="/">
+<<<<<<< HEAD
               {form === 'login' ? <Login active={active} setActive={setActive}  setForm={setForm} /> : <Signup active={active} setActive={setActive}  setForm={setForm}/>}
             </Route>
+=======
+              <Login active={active} setActive={setActive} />
+            </Route>
+            <Route exact path="/signup">
+              <Signup active={active} setActive={setActive} />
+            </Route>
+            <Route exact path="/signup"></Route>
+>>>>>>> dba5f3ab28ea29029024db513c19b330a780784b
           </Switch>
           <Switch>
             <Route exact path="/">
               <MainHeader setNavBackground={setNavBackground} />
             </Route>
             <Route exact path="/funiture"></Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
             <Route path="/500">
               <Servererror />
             </Route>
