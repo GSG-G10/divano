@@ -39,11 +39,18 @@ function createData(name, img, price, category, Qty="1") {
 }
 
 const rows = [
-
-  
+  {
+    id: 1,
+    name: "Timber Charme Tan Sofa",
+    image:
+      "https://cdn-images.article.com/products/SKU2128/2890x1500/image58175.jpg?fit=max&w=425&q=80&fm=webp",
+    price: 1899,
+    category: "Sofas",
+    Qty: 3
+  },
 ];
 
- function CustomizedTables() {
+ function CustomizedTables({ deleteProduct }) {
  
   return (
     <TableContainer component={Paper}>
@@ -65,9 +72,11 @@ const rows = [
               <CartCard />
               </StyledTableCell>
               <StyledTableCell align="right">{row.price} $ </StyledTableCell>
-              <StyledTableCell align="right"> <AddIcon sx={{fontSize:'medium'}} /*onClick={()=> ()} *//> {row.Qty} <RemoveIcon sx={{fontSize:'medium'}} /*onClick={()=> ()} */ /> </StyledTableCell>
+              <StyledTableCell align="right"> <AddIcon sx={{fontSize:'medium', cursor: 'pointer', marginRight: '5px'}} onClick={()=> {}} />
+                {row.Qty}
+              <RemoveIcon sx={{fontSize:'medium', cursor: 'pointer', marginLeft: '5px'}} onClick={()=> {}} /> </StyledTableCell>
               <StyledTableCell align="right">{row.price} $ </StyledTableCell>
-              <StyledTableCell align="right"><DeleteOutlineIcon sx={{ color: "#A80C0C" , fontSize: '30px' }}/></StyledTableCell>
+              <StyledTableCell align="right"><DeleteOutlineIcon sx={{ color: "#A80C0C" , fontSize: '30px', cursor: 'pointer' }} onClick={() => deleteProduct(row.id)}/></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
