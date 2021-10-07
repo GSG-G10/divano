@@ -7,6 +7,7 @@ import NavBar from './components/common/NavBar/NavBar';
 import MainHeader from './components/mainpage/MainHeader';
 import ProductDetails from './components/ProductDetails';
 import Login from "./components/Login";
+import Signup from './components/Signup';
 import "antd/dist/antd.css";
 
 
@@ -46,7 +47,7 @@ function App() {
             <Login active={active} setActive={setActive} />
             </Route>
             <Route exact path="/signup"> 
-            
+            <Signup active={active} setActive={setActive}/>
             </Route>
           </Switch>
           <Switch>
