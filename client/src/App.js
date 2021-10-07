@@ -8,7 +8,7 @@ import PageNotFound from "./commponants/errors/PageNotFound";
 import Servererror from "./commponants/errors/Servererror";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Login from "./components/Login";
-import Signup from "./commponants/Signup";
+import Signup from './components/Signup';
 import "antd/dist/antd.css";
 import "./App.css";
 
@@ -44,7 +44,10 @@ function App() {
           <Login active={active} setActive={setActive} />
           <Switch>
             <Route exact path="/">
-              <Login active={active} setActive={setActive} />
+            <Login active={active} setActive={setActive} />
+            </Route>
+            <Route exact path="/signup"> 
+            <Signup active={active} setActive={setActive}/>
             </Route>
             <Route exact path="/signup"></Route>
           </Switch>
