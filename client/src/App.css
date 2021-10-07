@@ -72,6 +72,7 @@
   align-items: center;
   flex-direction: column;
 }
+
 .close {
   position: absolute;
   right: 35px;
@@ -87,23 +88,36 @@
   cursor: pointer;
 }
 
-/* Footer */
-.footer-com {
-  height: 20vh;
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #d6d4d4;
+  }
+.footer{
+  height: 290px;
   display: flex;
-  flex-direction: column;
-  background-color: #04263f;
+  flex-direction:column;
+  background-color:#04263F ;
   justify-content: center;
   align-items: center;
-  color: white;
-  position: absolute;
-  bottom: 0;
+  color :white;
+  position:absolute;
+  bottom:0;
   width: 100%;
-  text-align: center;
+}
+.footer-com{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 /* error css  */
 div .error {
-  background-image: url("./assets/errors/leaf.jpg");
+  
+  background-image: url("./assets/errors/leaf.jpg") ;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -135,3 +149,5 @@ div .error {
   font-size: 43px;
   transition: all 0.1s ease-in-out;
 }
+  
+

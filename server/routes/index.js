@@ -21,6 +21,7 @@ router.get('/logout', logout);
 router.get('/cart', authentication, getCart);
 router.put('/cart/products/:id', authentication, updateCartProduct);
 router.delete('/cart/products/:id', authentication, deleteCartProduct);
+router.post('/cart', authentication, getCart);
 router.use(error404);
 router.use(serverError);
 
