@@ -8,6 +8,7 @@ import MainHeader from './components/mainpage/MainHeader';
 import ProductDetails from './components/ProductDetails';
 import Login from "./components/Login";
 import Signup from './components/Signup';
+import Cart from './pages/cart/cart';
 import "antd/dist/antd.css";
 
 
