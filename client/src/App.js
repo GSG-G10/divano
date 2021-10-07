@@ -51,7 +51,6 @@ function App() {
             <Route exact path="/signup"> 
             <Signup active={active} setActive={setActive}/>
             </Route>
-            <Route exact path="/signup"></Route>
           </Switch>
           <Switch>
             <Route exact path="/">

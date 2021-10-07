@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -18,12 +18,15 @@ const Signup = (props) => {
           try {
             const response = await axios.post("/api/v1/signup", value);
             if (response.data.message === "Signed up successfuly") {
-              return message.success(response.data.message);
+              message.success(response.data.message);
+              return setActive("");
             }
             message.error(response.data.message);
             return setActive("");
           } catch (err) {
-            return message.error(err.response.data.message || "Internal Server Error");
+            return message.error(
+              err.response.data.message || "Internal Server Error"
+            );
           }
         } else {
           message.error("passwords are not the same");
@@ -112,7 +115,7 @@ const Signup = (props) => {
               Sign Up
             </Button>
           </div>
-          <Link to ="/login"  className="link">
+          <Link to="/login" className="link">
             <u>Log In</u>
           </Link>
         </div>
