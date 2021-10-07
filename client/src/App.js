@@ -1,23 +1,64 @@
 /* eslint-disable react/react-in-jsx-scope */
-import React,{useState} from "react";
-import "antd/dist/antd.css";
-import {BrowserRouter as Router} from "react-router-dom";
-import Signup from "./components/Signup";
+import { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import './App.css';
+import NavBar from './components/common/NavBar/NavBar';
 import MainHeader from './components/mainpage/MainHeader';
-import "./App.css";
+import ProductDetails from './components/ProductDetails';
+import Login from "./components/Login";
+import Signup from './components/Signup';
+import "antd/dist/antd.css";
+
+
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      // darkBlue
+      main: '#04263F',
+    },
+    secondary: {
+      // Brown
+      main: '#99580B',
+    },
+  },
+});
 
 function App() {
-  
+  const [navBackground, setNavBackground] = useState('transparent');
+  const [username, setUsername] = useState('');
+  const [cartCount, setCartCount] = useState(0);
   const [active,setActive] = useState("");
   return (
-  <Router>
-    
-      
-      <div><MainHeader /></div>
-      <Signup active={active} setActive={setActive}/>
-      <button onClick={() => setActive("active")}>Hello Ahmad</button>
-    
-    </Router>
+    <div className="App">
+      <Router>
+        <ThemeProvider theme={theme}>
+          <NavBar
+            username={username}
+            cartCount={cartCount}
+            navBackground={navBackground}
+            setActive={setActive}
+            active={active}
+          />
+          <Login active={active} setActive={setActive} />
+          <Switch>
+            <Route exact path="/">
+            <Login active={active} setActive={setActive} />
+            </Route>
+            <Route exact path="/signup"> 
+            <Signup active={active} setActive={setActive}/>
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/">
+              <MainHeader setNavBackground={setNavBackground} />
+            </Route>
+            <Route exact path="/funiture" />
+          </Switch>
+        </ThemeProvider>
+      </Router>
+    </div>
   );
 }
 
