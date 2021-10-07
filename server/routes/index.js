@@ -6,7 +6,7 @@ const { authentication, signUpValidation } = require('../middlewares');
 
 router.post('/signup', signUpValidation, signUp);
 router.post('/login', login);
-router.get('/products/:id', productDetails);
+router.get('/product/:id', productDetails);
 router.get('/products', getProducts);
 router.get('/logout', logout);
 router.get('/cart', authentication, getCart);
