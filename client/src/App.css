@@ -15,7 +15,6 @@
 .add-form-container.active {
   display: flex;
   justify-content: center;
-  
 }
 
 .content-hider {
@@ -74,6 +73,21 @@
   flex-direction: column;
 }
 
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #d6d4d4;
+}
+
+.close:hover,
+.close:focus {
+  color: hsl(205, 88%, 13%);
+  cursor: pointer;
+}
+
   .close {
     position: absolute;
     right: 35px;
@@ -82,28 +96,58 @@
     font-weight: bold;
     color: #d6d4d4;
   }
+.footer{
+  height: 290px;
+  display: flex;
+  flex-direction:column;
+  background-color:#04263F ;
+  justify-content: center;
+  align-items: center;
+  color :white;
+  position:absolute;
+  bottom:0;
+  width: 100%;
+}
+.footer-com{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+/* error css  */
+div .error {
   
-  .close:hover,
-  .close:focus {
-    color: hsl(205, 88%, 13%);
-    cursor: pointer;
-  }
-  .footer{
-    height: 290px;
-    display: flex;
-    flex-direction:column;
-    background-color:#04263F ;
-    justify-content: center;
-    align-items: center;
-    color :white;
-    position:absolute;
-    bottom:0;
-    width: 100%;
-  }
-  .footer-com{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-image: url("./assets/errors/leaf.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pageerror {
+  font-size: 90px;
+  font-family: sans-serif;
+  margin: 0px 0px;
+}
+.textpageerror {
+  font-size: 45px;
+  font-family: sans-serif;
+}
+.error img {
+  width: 27%;
+}
+.goback {
+  color: hsl(205, 88%, 13%);
+  font-size: 40px;
+  padding: 35px 40px;
+  cursor: pointer;
+}
+.goback:hover {
+  color: hsl(205, 88%, 13%);
+  font-size: 43px;
+  transition: all 0.1s ease-in-out;
+}
   
-  }
-  
+

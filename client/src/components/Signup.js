@@ -16,9 +16,7 @@ const Signup = (props) => {
       if (value.password && value.password.length >= 8) {
         if (value.password === value.confirmPassword) {
           try {
-            const response = await axios.post("/api/v1/signup", {
-              data: value,
-            });
+            const response = await axios.post("/api/v1/signup", value);
             if (response.data.message === "Signed up successfuly") {
               return message.success(response.data.message);
             }
