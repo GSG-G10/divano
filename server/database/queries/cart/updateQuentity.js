@@ -1,3 +1,7 @@
 const connection = require('../../connection');
 
-module.exports = (newQty, itemId) => connection.query('UPDATE cart_items SET quentity = $1 WHERE id = $2', [newQty, itemId]);
+const updateQuantity = (itemId, userId) => connection.query('UPDATE cart_items SET quentity = quentity +1 WHERE product_id = $1 AND user_id = $2', [
+  itemId,
+  userId,
+]);
+module.exports = updateQuantity;
