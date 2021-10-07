@@ -11,10 +11,7 @@ import Login from "./components/Login";
 import Signup from './components/Signup';
 import Cart from './pages/cart/cart';
 import "antd/dist/antd.css";
-<<<<<<< HEAD
 import  Footer  from './components/common/Footer';
-=======
->>>>>>> 7703a387f4eed5839fc7f9ce8b39514c3909df3d
 import "./App.css";
 
 const theme = createTheme({
