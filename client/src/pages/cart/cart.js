@@ -50,7 +50,7 @@ function Cart() {
     axios
       .get('/api/v1/userProducts')
       .then(response => response.data)
-      .then(data => setCart(data))
+      .then(data => setCartProducts(data))
       .catch(err => console.log(err));
     getCartProducts();
   }, []);

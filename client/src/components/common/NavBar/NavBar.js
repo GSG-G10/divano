@@ -60,9 +60,9 @@ function NavBar({ cartCount, navBackground, setActive}) {
                 <span className="userName">{username}</span>
               </div> 
               <div className="cartContainer">
-                <IconButton>
+                <Link to='/cart'>
                   <ShoppingCartIcon className="cartIcon" />
-                </IconButton>
+                </Link>
                 <span className="counter">{cartCount?cartCount:0}</span>
               </div>
               <div className={cookies?"logout-btn":"hidden"} onClick={handleLogout} >
