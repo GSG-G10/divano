@@ -10,6 +10,7 @@ router.get('/product/:id', productDetails);
 router.get('/products', getProducts);
 router.get('/logout', logout);
 router.get('/cart', authentication, getCart);
+router.post('/cart', authentication, getCart);
 router.use(error404);
 router.use(serverError);
 
