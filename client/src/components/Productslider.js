@@ -6,7 +6,6 @@ import { styled } from "@mui/material/styles";
 import sofa1 from "../assets/sofa1.png";
 import sofa2 from "../assets/sofa2.png";
 import sofa3 from "../assets/sofa3.png";
-import sofa4 from "../assets/sofa4.png";
 import "../App.css";
 
 const Item = styled(Paper)(({ theme }) => ({

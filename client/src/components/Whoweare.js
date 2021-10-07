@@ -5,7 +5,9 @@ import "../App.css";
 
 const Whoweare = () => {
   return (
+
     <Box
+    
       sx={{
         width: "100%",
         height: "100%",
