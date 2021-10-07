@@ -46,6 +46,12 @@ function Cart() {
       .catch((err) => console.log(err));
 
   useEffect(() => {
+
+    axios
+      .get('/api/v1/userProducts')
+      .then(response => response.data)
+      .then(data => setCart(data))
+      .catch(err => console.log(err));
     getCartProducts();
   }, []);
 
