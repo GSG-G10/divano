@@ -4,20 +4,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/common/NavBar/NavBar";
 import MainHeader from "./components/mainpage/MainHeader";
 import ProductDetails from "./components/ProductDetails";
-import PageNotFound from "./commponants/errors/PageNotFound";
-import Servererror from "./commponants/errors/Servererror";
+import PageNotFound from "./components/errors/PageNotFound";
+import Servererror from "./components/errors/Servererror";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Login from "./components/Login";
 import Signup from './components/Signup';
 import Cart from './pages/cart/cart';
 import "antd/dist/antd.css";
-<<<<<<< HEAD
 import  Footer  from './components/common/Footer';
-
-
-=======
 import "./App.css";
->>>>>>> b8799e0f14bb6422db727f799e3551f9cd4d67f0
 
 const theme = createTheme({
   palette: {
