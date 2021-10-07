@@ -8,6 +8,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Box } from '@mui/system';
 import axios from 'axios';
+import addToCart from '../../../functions/addToCart'
 
 const theme = createTheme({
     palette: {
@@ -25,17 +26,6 @@ const theme = createTheme({
 
 
 function ProductsCard({ id, name, price, image }) {
-
-    
-        const addToCart = ({id })=> axios.post('/user', {
-           
-         })
-         .then(function (response) {
-           console.log(response);
-         })
-         .catch(function (error) {
-           console.log(error);
-         });
          
     return (
         <ThemeProvider theme={theme}>

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const authentication = (req, res, next) => {
   const { token } = req.cookies;
-  const secret = process.env.SECRET;
+  const secret = process.env.SECRET_KEY;
 
   if (!secret) {
     return next(new Error('Internal server error!'));

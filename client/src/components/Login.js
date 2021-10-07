@@ -9,7 +9,7 @@ import TextField from '@mui/material/TextField';
 
 const Login = (props) => {
     const [value, setValue] = useState({email: '', password: ''});
-    const { active, setActive } = props;
+    const { active, setActive, setForm } = props;
   
     const handleSignUpFetch = async (e) => {
         e.preventDefault()
@@ -78,7 +78,7 @@ const Login = (props) => {
               <Button variant="outlined" onClick={handleChange} >Cancel</Button>
               <Button variant="contained" onClick={handleSignUpFetch} color='primary'>Login</Button>
               </div>
-              <Link to='/signup' className="link" >
+              <Link to='/' onClick={() => setForm('signup')} className="link" >
           <u>Sign Up</u>
         </Link>
             </div>

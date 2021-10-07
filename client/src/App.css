@@ -72,7 +72,6 @@
   align-items: center;
   flex-direction: column;
 }
-
 .close {
   position: absolute;
   right: 35px;
@@ -88,36 +87,22 @@
   cursor: pointer;
 }
 
-  .close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #d6d4d4;
-  }
-.footer{
-  height: 290px;
-  display: flex;
-  flex-direction:column;
-  background-color:#04263F ;
-  justify-content: center;
-  align-items: center;
-  color :white;
-  position:absolute;
-  bottom:0;
-  width: 100%;
-}
-.footer-com{
+/* Footer */
+.footer-com {
+  height: 20vh;
   display: flex;
   flex-direction: column;
+  background-color: #04263f;
+  justify-content: center;
   align-items: center;
-
+  color: white;
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
 }
 /* error css  */
 div .error {
-  
-  background-image: url("./assets/errors/leaf.jpg") ;
+  background-image: url('./assets/errors/leaf.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -149,70 +134,56 @@ div .error {
   font-size: 43px;
   transition: all 0.1s ease-in-out;
 }
-  
-.whoweare{
-  color:white;
+
+.whoweare {
+  color: white;
   display: flex;
   justify-content: space-around;
   width: 100%;
-
-  
 }
-.whowearep{
-  color:white;
+.whowearep {
+  color: white;
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding:200px 60px 0px 60px;
-  
-
+  padding: 200px 60px 0px 60px;
 }
-.whowearep p{
-  
+.whowearep p {
   font-size: 25px;
-
 }
-.whowearep h1{
-  
+.whowearep h1 {
   font-size: 40px;
-
 }
-.whoweareimg{
-
+.whoweareimg {
   height: 50%;
-
 }
-.imgproduct{
+.imgproduct {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-cursor: pointer;
-font-weight: bolder;
-
-  
+  cursor: pointer;
+  font-weight: bolder;
 }
-.imgproduct img{
+.imgproduct img {
   width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-cursor: pointer; 
+  cursor: pointer;
 }
-.imgproduct:hover{
+.imgproduct:hover {
   background-color: #d3d3d4;
-  
 }
-.border{
+.border {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  
 }
-.arrow{
+.arrow {
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  background-color: #04263F; 
+  background-color: #04263f;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -221,5 +192,3 @@ cursor: pointer;
   font-size: 20px;
   cursor: pointer;
 }
-
-

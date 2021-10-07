@@ -34,6 +34,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [cartCount, setCartCount] = useState(0);
   const [active, setActive] = useState("");
+  const [form, setForm] = useState('login')
   return (
     <div className="App">
       <Router>
@@ -45,16 +46,10 @@ function App() {
             setActive={setActive}
             active={active}
           />
-         
-          <Login active={active} setActive={setActive} />
           <Switch>
             <Route exact path="/">
-              <Login active={active} setActive={setActive} />
+              {form === 'login' ? <Login active={active} setActive={setActive}  setForm={setForm} /> : <Signup active={active} setActive={setActive}  setForm={setForm}/>}
             </Route>
-            <Route exact path="/signup">
-              <Signup active={active} setActive={setActive} />
-            </Route>
-            <Route exact path="/signup"></Route>
           </Switch>
           <Switch>
             <Route exact path="/">
