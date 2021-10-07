@@ -37,7 +37,7 @@ function App() {
             <Route exact path="/">
               <MainHeader setNavBackground={setNavBackground} />
             </Route>
-            <Route exact path="/funiture"><ProductDetails setNavBackground={setNavBackground} /></Route>
+            <Route exact path="/funiture" />
           </Switch>
         </ThemeProvider>
       </Router>

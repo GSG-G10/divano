@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const getProduct = async () => {
+const getProduct = () => {
   const url = '/api/v1/product/4';
   return Axios.get(url)
     .then((response) => response)
