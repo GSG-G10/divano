@@ -7,7 +7,7 @@ import { message } from "antd";
 
 const Signup = (props) => {
   const [value, setValue] = useState({});
-  const { active, setActive } = props;
+  const { active, setActive, setForm } = props;
 
   const handleSignUpFetch = async (e) => {
     e.preventDefault();
@@ -115,7 +115,7 @@ const Signup = (props) => {
               Sign Up
             </Button>
           </div>
-          <Link to="/login" className="link">
+          <Link to='/' onClick={() => setForm('login')} className="link">
             <u>Log In</u>
           </Link>
         </div>
