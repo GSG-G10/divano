@@ -13,7 +13,7 @@ import Cart from "./pages/cart/cart";
 import "antd/dist/antd.css";
 import  Footer  from './components/common/Footer';
 import "./App.css";
-
+import Furniture from './pages/Furniture.js'
 const theme = createTheme({
   palette: {
     primary: {
@@ -53,10 +53,11 @@ function App() {
             <Route exact path="/">
               <MainHeader setNavBackground={setNavBackground} />
             </Route>
-            <Route exact path="/funiture"></Route>
+            <Route exact path="/funiture"><Furniture setNavBackground={setNavBackground}/></Route>
             <Route exact path="/cart">
               <Cart />
             </Route>
+
             <Route path="/500">
               <Servererror />
             </Route>
