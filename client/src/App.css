@@ -87,3 +87,18 @@
   color: hsl(205, 88%, 13%);
   cursor: pointer;
 }
+
+/* Footer */
+.footer-com {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #04263f;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

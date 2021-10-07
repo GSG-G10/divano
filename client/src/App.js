@@ -8,6 +8,7 @@ import MainHeader from './components/mainpage/MainHeader';
 import ProductDetails from './components/ProductDetails';
 import Login from "./components/Login";
 import "antd/dist/antd.css";
+import  Footer  from './components/common/Footer';
 
 
 
@@ -56,6 +57,7 @@ function App() {
             <Route exact path="/funiture" />
           </Switch>
         </ThemeProvider>
+        <Footer />
       </Router>
     </div>
   );
