@@ -5,22 +5,35 @@ import NavBar from '../../components/common/NavBar/NavBar';
 import CustomizedTables from '../../components/cartTable/cartTable';
 
 function Cart() {
-  const [cart, setCart] = useState();
+  const [cartProducts, setCartProducts] = useState();
   const [navBackground, setNavBackground] = useState();
   const [username, setUsername] = useState('');
   const [cartCount, setCartCount] = useState(0);
   const [active, setActive] = useState('');
 
-  // function totalCost() {
-  //   let totalCost = 0;
-  //   cart.forEach((ele) => (totalCost = totalCost + ele.price * ele.quantity));
-  //   return totalCost;
-  // }
   const deleteProduct = (id) => {
     axios
-      .delete(`/api/v1/userProducts/${id}`)
+      .delete(`/api/v1/cart/products/${id}`)
+      .then(() => {
+        setCartProducts((prev) => prev.filter((p) => p.id !== id));
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const updateProduct = (id, qty) => {
+    axios
+      .put(`/api/v1/cart/products/${id}`, {
+        quentity: qty,
+      })
       .then((res) => {
-        console.log(res);
+        setCartProducts((prev) =>
+          prev.map((p) => {
+            if (p.id === id) {
+              return { ...p, quentity: qty };
+            }
+            return p;
+          })
+        );
       })
       .catch((err) => console.error(err));
   };
@@ -29,7 +42,7 @@ function Cart() {
     axios
       .get('/api/v1/cart')
       .then((res) => res.data)
-      .then((data) => setCart(data))
+      .then((data) => setCartProducts(data))
       .catch((err) => console.log(err));
 
   useEffect(() => {
@@ -45,7 +58,11 @@ function Cart() {
         setActive={setActive}
         active={active}
       />
-      <CustomizedTables deleteProduct={deleteProduct} />
+      <CustomizedTables
+        cartProducts={cartProducts}
+        deleteProduct={deleteProduct}
+        updateProduct={updateProduct}
+      />
     </div>
   );
 }

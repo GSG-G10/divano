@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import CartCard from '../common/cartCard/cartCard'
+import CartCard from '../common/cartCard/cartCard';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import AddIcon from '@mui/icons-material/AddRounded';
 import RemoveIcon from '@mui/icons-material/RemoveRounded';
@@ -34,30 +34,25 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, img, price, category, Qty="1") {
-  return { name, img, price, category, Qty };
-}
 
-const rows = [
-  {
-    id: 1,
-    name: "Timber Charme Tan Sofa",
-    image:
-      "https://cdn-images.article.com/products/SKU2128/2890x1500/image58175.jpg?fit=max&w=425&q=80&fm=webp",
-    price: 1899,
-    category: "Sofas",
-    Qty: 3
-  },
-];
-
- function CustomizedTables({ deleteProduct }) {
+function CustomizedTables({ cartProducts = [], deleteProduct, updateProduct }) {
  
+
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 400 , maxWidth: 1000 , margin: "auto" , marginTop: "10rem" , marginBottom: "10rem"  }} aria-label="customized table">
+      <Table
+        sx={{
+          minWidth: 400,
+          maxWidth: 1000,
+          margin: 'auto',
+          marginTop: '10rem',
+          marginBottom: '10rem',
+        }}
+        aria-label="customized table"
+      >
         <TableHead>
           <TableRow>
-             {/* (Product, price, Qty, Total, Delete)*/}
+            {/* (Product, price, Qty, Total, Delete)*/}
             <StyledTableCell>Product</StyledTableCell>
             <StyledTableCell align="right">price&nbsp;($)</StyledTableCell>
             <StyledTableCell align="right">Qty</StyledTableCell>
@@ -66,23 +61,45 @@ const rows = [
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
+          {cartProducts.map((row) => (
+            <StyledTableRow key={row.id}>
+              {row.id}
               <StyledTableCell component="th" scope="row">
-              <CartCard />
+                <CartCard name={row.name} img={row.image} />
               </StyledTableCell>
               <StyledTableCell align="right">{row.price} $ </StyledTableCell>
-              <StyledTableCell align="right"> <AddIcon sx={{fontSize:'medium', cursor: 'pointer', marginRight: '5px'}} onClick={()=> {}} />
-                {row.Qty}
-              <RemoveIcon sx={{fontSize:'medium', cursor: 'pointer', marginLeft: '5px'}} onClick={()=> {}} /> </StyledTableCell>
+              <StyledTableCell align="right">
+                <AddIcon
+                  sx={{
+                    fontSize: 'medium',
+                    cursor: 'pointer',
+                    marginRight: '5px',
+                  }}
+                  onClick={() => updateProduct(row.id, row.quentity + 1)}
+                />
+                {row.quentity}
+                <RemoveIcon
+                  sx={{
+                    fontSize: 'medium',
+                    cursor: 'pointer',
+                    marginLeft: '5px',
+                  }}
+                  onClick={() => updateProduct(row.id, row.quentity - 1)}
+                />{' '}
+              </StyledTableCell>
               <StyledTableCell align="right">{row.price} $ </StyledTableCell>
-              <StyledTableCell align="right"><DeleteOutlineIcon sx={{ color: "#A80C0C" , fontSize: '30px', cursor: 'pointer' }} onClick={() => deleteProduct(row.id)}/></StyledTableCell>
+              <StyledTableCell align="right">
+                <DeleteOutlineIcon
+                  sx={{ color: '#A80C0C', fontSize: '30px', cursor: 'pointer' }}
+                  onClick={() => deleteProduct(row.id)}
+                />
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
   );
-};
+}
 
 export default CustomizedTables;
