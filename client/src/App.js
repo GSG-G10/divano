@@ -3,11 +3,13 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './App.css';
-import NavBar from './components/common/NavBar/NavBar';
+import NavBar from './components/Common/NavBar/NavBar';
 import MainHeader from './components/mainpage/MainHeader';
 import ProductDetails from './components/ProductDetails';
 import Login from "./components/Login";
 import Signup from './components/Signup';
+import Whoweare from './components/Whoweare';
+import Productslider from './components/Productslider';
 import "antd/dist/antd.css";
 
 
@@ -41,6 +43,7 @@ function App() {
             setActive={setActive}
             active={active}
           />
+         
           <Login active={active} setActive={setActive} />
           <Switch>
             <Route exact path="/">
@@ -53,6 +56,8 @@ function App() {
           <Switch>
             <Route exact path="/">
               <MainHeader setNavBackground={setNavBackground} />
+               <Productslider/>
+               <Whoweare />
             </Route>
             <Route exact path="/funiture" />
           </Switch>
