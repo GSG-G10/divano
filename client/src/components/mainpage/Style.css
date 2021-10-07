@@ -1,0 +1,14 @@
+/*banner*/
+.banner{
+  background-image: url('../../assets/banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
+.welcome{
+  color: white;
+  font-size: 28px;
+  width:15%;
+  padding: 10rem 0 0 10rem;
+}

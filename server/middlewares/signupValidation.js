@@ -1,6 +1,6 @@
 const signUpSchema = require('../utils/validations/signUpSchema');
 
-const signupValid = (req, res, next) => {
+const signUpValidation = (req, res, next) => {
   const {
     username, password, confirmPassword, email,
   } = req.body;
@@ -22,4 +22,4 @@ const signupValid = (req, res, next) => {
   }
 };
 
-module.exports = signupValid;
+module.exports = signUpValidation;

@@ -25,7 +25,7 @@ const Login = (props) => {
                     }
                    return message.error(response.data.message)
                   } catch (err) {
-                    return  message.error(err.response.data.message)
+                    return  message.error(err.response.data.message || 'Internal Server Error')
                   }
                     
             } else {
@@ -50,7 +50,7 @@ const Login = (props) => {
     return (
         <>
           <div className={`add-form-container ${active}`}>
-          <span onClick={handleChange} class="close" title="Close Modal">&times;</span>
+          <span onClick={handleChange} className="close" title="Close Modal">&times;</span>
             <h2 className="form-title">Login</h2>
             <div className="popup-form-container">
               <form className="add-form">
