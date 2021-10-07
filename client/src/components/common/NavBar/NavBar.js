@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-function NavBar({ username, cartCount, navBackground }) {
+function NavBar({ username, cartCount, navBackground, setActive, active }) {
   return (
     <AppBar color={navBackground} position="absolute">
       <Toolbar>
@@ -34,7 +34,7 @@ function NavBar({ username, cartCount, navBackground }) {
           </li>
         </ul>
         <Toolbar className="navBtns">
-          <button type="button" className={username ? 'hidden' : 'loginBtn'}>Log In</button>
+          <button type="button" className={username ? 'hidden' : 'loginBtn'} onClick={() => setActive('active')}>Log In</button>
           <div className={username ? 'userContainer' : 'hidden'}>
             <AccountCircleIcon color="secondary" />
             <span className="userName">{username}</span>

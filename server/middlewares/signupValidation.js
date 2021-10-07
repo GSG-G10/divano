@@ -13,9 +13,9 @@ const signUpValidation = (req, res, next) => {
 
   if (error) {
     // validattion error
-    res.status(422).json({
-      msg: error.details[0].message,
-      status: 422,
+    res.status(400).json({
+      message: error.details[0].message,
+      status: 400,
     });
   } else {
     next();

@@ -6,6 +6,10 @@ import './App.css';
 import NavBar from './components/common/NavBar/NavBar';
 import MainHeader from './components/mainpage/MainHeader';
 import ProductDetails from './components/ProductDetails';
+import Login from "./components/Login";
+import "antd/dist/antd.css";
+
+
 
 const theme = createTheme({
   palette: {
@@ -24,6 +28,7 @@ function App() {
   const [navBackground, setNavBackground] = useState('transparent');
   const [username, setUsername] = useState('');
   const [cartCount, setCartCount] = useState(0);
+  const [active,setActive] = useState("");
   return (
     <div className="App">
       <Router>
@@ -32,7 +37,18 @@ function App() {
             username={username}
             cartCount={cartCount}
             navBackground={navBackground}
+            setActive={setActive}
+            active={active}
           />
+          <Login active={active} setActive={setActive} />
+          <Switch>
+            <Route exact path="/">
+            <Login active={active} setActive={setActive} />
+            </Route>
+            <Route exact path="/signup"> 
+            
+            </Route>
+          </Switch>
           <Switch>
             <Route exact path="/">
               <MainHeader setNavBackground={setNavBackground} />
