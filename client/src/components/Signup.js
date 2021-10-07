@@ -55,7 +55,7 @@ const Signup = (props) => {
     <>
       <div className={`add-form-container ${active}`}>
         <div className="popup-form-container">
-          <span onClick={handleChange} class="close" title="Close Modal">
+          <span onClick={handleChange} className="close" title="Close Modal">
             &times;
           </span>
           <h2 className="form-title">Sign Up</h2>
