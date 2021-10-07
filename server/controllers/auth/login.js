@@ -9,6 +9,7 @@ const login = async (req, res, next) => {
   try {
     const { password, email } = req.body;
     await loginSchema.validateAsync(req.body).catch((error) => {
+      // to send specific error message to user
       throw { message: error.details[0].message, status: 400 };
     });
     const { rows } = await getUserQuery(email, '');
