@@ -18,17 +18,16 @@ const Whoweare = () => {
     >
       <div className="whoweare">
         <div className="whowearep">
-          <h1 style={{color:"white"}}>WHO WE ARE ?</h1>
+          <h1 style={{ color: "white" }}>WHO WE ARE ?</h1>
           <p>
-            Danish multinational conglomerate that designs and sells
-            ready-to-assemble furniture, kitchen appliances and home
-            accessories, among other useful goods and occasionally home
-            servicies. Founded in 2010 by 16-years-old Asmaa Najjar, Divano has
-            been the world's largest furniture retailer since 2019.
+            Divano is an e-commerce React website with rest API and fake data
+            stored in a relational SQL database that presents furniture products
+            and allows users to add products to their cart, delete cart items,
+            and control quantity.
           </p>
         </div>
         <div className="whoweareimg">
-          <img src={Img} alt="img of sofa"  />
+          <img src={Img} alt="img of sofa" />
         </div>
       </div>
     </Box>
