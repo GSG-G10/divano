@@ -1,4 +1,3 @@
-/* pop up form  */
 .add-form-container {
   text-align: center;
   width: 50%;
@@ -43,65 +42,36 @@
   flex-direction: column;
   margin-bottom: 30px;
   margin-left: 5%;
+  margin-right: 5%;
 }
-
-.add-form input {
-  background-color: #fffbfb;
-  border-radius: 35px;
-  border: none;
-  outline: none;
-  height: 20px;
-  width: 60%;
-  padding: 29px 30px;
-  margin: 0px auto 20px auto;
-  filter: drop-shadow(0 0 0.75rem rgb(221, 218, 218));
+.btns {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  align-self: center;
+  padding-bottom: 20px;
+}
+.link {
+  color: hsl(205, 88%, 13%);
+  font-size: 16px;
+  cursor: pointer;
+  padding-top: 10px;
+}
+.link:hover {
+  font-size: 18px;
+  padding-top: 2;
+  transition: all 0.5s ease;
 }
 .add-form input::placeholder {
   text-align: center;
 }
 .popup-form-container {
-  width: 90%;
-  margin: 10px auto;
+  width: 100%;
+  margin: 10px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: column;
-}
-.btns {
-  width: 45%;
-  display: flex;
-  margin: 0px auto;
-  justify-content: space-between;
-}
-.btns button {
-  height: 50px;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  border-radius: 35px;
-  padding: 5px 35px;
-}
-.cancel {
-  background-color: white;
-  font-size: 20px;
-  filter: drop-shadow(0 0 0.75rem rgb(211, 211, 211));
-  color: hsl(205, 88%, 13%);
-}
-.signup {
-  background-color: hsl(205, 88%, 13%);
-  font-size: 19px;
-  filter: drop-shadow(0 0 0.75rem rgb(197, 196, 196));
-  color: white;
-}
-.link {
-  color: hsl(205, 88%, 13%);
-  margin-top: 50px;
-  font-size: 20px;
-  cursor: pointer;
-}
-.link:hover {
-  font-size: 22px;
-  transition: all 0.5s ease;
-  margin-top: 46px;
 }
 .close {
   position: absolute;
